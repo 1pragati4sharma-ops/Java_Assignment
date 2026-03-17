@@ -1,0 +1,21 @@
+package Java_Assignment4.Module8;
+
+// LeetCode 387 – First Unique Character in a String
+import java.util.*;
+    public class FirstChar {
+        public static int firstUniqChar(String s) {
+            int[] freq=new int[26];
+            for(char c:s.toCharArray()) freq[c-'a']++;
+
+            for(int i=0;i<s.length();i++)
+                if(freq[s.charAt(i)-'a']==1)
+                    return i;
+
+            return -1;
+        }
+
+        public static void main(String[] args){
+            System.out.println(firstUniqChar("hello"));
+        }
+    }
+
